@@ -1,0 +1,44 @@
+
+
+<form action="/orders/new" method="POST">
+    <div>
+        <label for="quantity">Lugares</label>
+        <input type="number" name="quantity" min="1">
+    </div>
+
+    <div>
+        <label for="">Peli</label>
+        <select name="movie" id="">
+            {{#each movies as |movie|}}
+            <option value="{{movie._id}}">{{movie.title}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <div>
+        <label for="">Cine</label>
+        <select name="cinema" id="">
+            <option value="WTC">WTC</option>
+            <option value="Delta">Delta</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="">Hora</label>
+        <select name="hora" id="">
+            <option value="9PM">9 PM</option>
+            <option value="7PM">7 PM</option>
+        </select>
+    </div>
+
+    <button type="submit">Picale</button>
+
+</form>
+
+
+<ul>
+    {{#each orders as |order|}}
+        <li>Orden de {{order.quantity}} para la peli {{order.movie}} a las {{order.hora}} en {{order.cinema}}</li>
+        <a href="/orders/edit/{{order._id}}">Editar</a>
+    {{/each}}
+</ul>

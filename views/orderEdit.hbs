@@ -1,0 +1,34 @@
+
+
+<form action="/orders/edit/{{_id}}" method="POST">
+    <div>
+        <label for="quantity">Lugares</label>
+        <input type="number" name="quantity" min="1" value="{{quantity}}">
+    </div>
+
+    <div>
+        <label for="movie">Peli</label>
+        <input type="text" name="movie" value={{movie}}>
+    </div>
+
+    <div>
+        <label for="">Cine</label>
+        <select name="cinema" id="">
+            <option value="WTC">WTC</option>
+            <option value="Delta">Delta</option>
+        </select>
+        <span>Opción prev. {{cinema}}</span>
+    </div>
+
+    <div>
+        <label for="">Hora</label>
+        <select name="hora" id="">
+            <option value="9PM">9 PM</option>
+            <option value="7PM">7 PM</option>
+        </select>
+        <span>Opción prev. {{hora}}</span>
+    </div>
+
+    <button type="submit">Picale</button>
+
+</form>
